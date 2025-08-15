@@ -10,7 +10,11 @@ import { Pencil, Trash2, ListTodo, Users } from "lucide-react";
 import { ListTasksPanel } from "../ListTasksPanel";
 import { MembersPanel } from "../MembersPanel";
 
-export function ListCard({ list }: { list: ListDoc }) {
+interface Props {
+  list: ListDoc;
+}
+
+export const ListCard: React.FC<Props> = ({ list }) => {
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [titleInput, setTitleInput] = useState(list.title);
   const [isBusy, setIsBusy] = useState(false);
@@ -176,4 +180,4 @@ export function ListCard({ list }: { list: ListDoc }) {
       )}
     </div>
   );
-}
+};

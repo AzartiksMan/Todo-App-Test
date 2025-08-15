@@ -9,7 +9,7 @@ import { removeMember, setMemberRole } from "@/lib/firestore";
 
 type Role = "admin" | "viewer";
 
-interface MembersPanelProps {
+interface Props {
   listId: string;
   ownerEmail: string;
   members: Record<string, Role>;
@@ -18,7 +18,7 @@ interface MembersPanelProps {
 
 const normalizeEmail = (value: string) => value.trim().toLowerCase();
 
-export const MembersPanel: React.FC<MembersPanelProps> = ({
+export const MembersPanel: React.FC<Props> = ({
   listId,
   ownerEmail,
   members,
